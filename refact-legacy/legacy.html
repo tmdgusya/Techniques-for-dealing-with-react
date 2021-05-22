@@ -26,12 +26,15 @@
         spanEl.innerHTML = todo.desc;
         buttonEl.innerHTML = "삭제";
         buttonEl.dataset.id = todo.id;
+        buttonEl.dataset.roach = todo.id;
+        console.log(buttonEl.dataset);
         buttonEl.onclick = onDelete;
         liEl.appendChild(spanEl);
         liEl.appendChild(buttonEl);
         return liEl;
       }
       function onDelete(e) {
+        console.log(e.target.dataset);
         const id = Number(e.target.dataset.id);
         const index = todoList.findIndex((item) => item.id === id);
         if (index >= 0) {
