@@ -1,4 +1,5 @@
 import React from "react";
+import { Title } from "./TitleComponent";
 
 export class MyComponent extends React.Component {
   state = {
@@ -34,6 +35,7 @@ export class MyComponent extends React.Component {
     return (
       <div>
         <h3>할 일 목록</h3>
+        <Title count={this.state.currentId}></Title>
         <ul>
           {todoList.map((todo) => {
             return (
