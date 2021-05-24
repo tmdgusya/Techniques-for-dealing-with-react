@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 
 export function Profile() {
-  const [name, setName] = useState("");
+  const [state, setName] = useState({ name: "", age: "20" });
 
   return (
     <div>
-      <p>{`name is ${name}`}</p>
+      <p>{`name is ${state.name}`}</p>
+      <p>{`age is ${state.age}`}</p>
       <input
         type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        value={state.name}
+        onChange={(e) => setName({ ...state, name: e.target.value })}
       />
     </div>
   );
